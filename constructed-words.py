@@ -96,10 +96,11 @@ class scrambler(Tkinter.Tk):
 		#	if len(v) > 0:
 		#		print v
 
-		outFile = tkFileDialog.asksaveasfile(mode='w')
+		outFile = tkFileDialog.asksaveasfile(mode='w+')
 		generated = []
 		i = 0
-		startedIf = False;
+		if1Flag = False
+		if2Flag = False
 		if1 = ""
 		if2 = ""
 
@@ -144,13 +145,11 @@ class scrambler(Tkinter.Tk):
 						ret = random.choice(consonants)
 					else:
 						ret = random.choice(consonants) + random.choice(consonants)
-				# TODO ( X | Y ) or statements
 				elif symbol == "'":
 					ret = "'";
 				elif symbol == "-":
 					ret = "-";
 				# TODO bracketed stuff
-
 				if if1Flag:
 					if1 += ret
 				elif if2Flag:
